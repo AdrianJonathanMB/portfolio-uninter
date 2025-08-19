@@ -1,72 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap");
+
 * {
-    box-sizing: border-box;
-    color: var(--tertiary);
-    padding: 0;
-    margin: 0;
+  font-family: "Sora", sans-serif;
+  box-sizing: border-box;
+  color: var(--tertiary);
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
-    --primary: #17142F;
-    --secondary: #E2322C;
-    --tertiary: #FFFFFF;
+  --primary: #17142f;
+  --secondary: #e2322c;
+  --tertiary: #ffffff;
 }
 
 body {
-    background-color: var(--primary);
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
+  background-color: var(--primary);
+  flex-direction: column;
+  overflow-y: hidden;
+  height: 100vh;
+  display: flex;
+  width: 400vw;
 }
 
-header {
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 196px;
-    position: absolute;
-    display: flex;
-    width: 100vw;
+h1,
+h1 > span {
+  font-size: 3.5rem;
 }
-
-main {
-    position: absolute;
-    width: 400vw;
-    height: 100vh;
-    overflow: scroll;
-
-    & > ul{
-        display: flex;
-      
-        & > li {
-            height: 100vh;
-            width: 100vw;
-         
-        }
-    }
+h1 > span {
+  color: var(--secondary);
+}
+p {
+  font-size: 1rem;
+  font-weight: 200;
 }
 
 nav {
-    background-color: rgba(255, 255, 255, 0.1);
-    ;
-    backdrop-filter: blur(50px);
-    transform: translateY(50%);
-    position: fixed;
+  display: flex;
+  height: 100vh;
+  width: 50px;
+  align-items: center;
+  position: fixed;
+  right: 32px;
+
+  & > ul {
+    background-color: rgb(255, 255, 255, 0.1);
+    justify-content: space-evenly;
+    backdrop-filter: blur(10px);
+    flex-direction: column;
     border-radius: 50px;
-    padding: 12px;
-    right: 48px;
+    list-style: none;
+    display: flex;
+    width: 100%;
+    height: 50%;
 
-    &>ul {
-        flex-direction: column;
-        display: flex;
-        gap: 24px;
-
-        &>li {
-            background-color: red;
-            place-items: center;
-            list-style: none;
-            display: grid;
-            height: 50px;
-            width: 50px;
-        }
+    & > li {
+      height: 50px;
+      width: 50px;
+      display: grid;
+      place-items: center;
     }
+  }
+}
+header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 196px;
+  display: flex;
+  width: 100vw;
+}
 
+main {
+  overflow-x: scroll;
+  flex-grow: 1;
+
+  & > ul {
+    display: flex;
+    height: 100%;
+
+    & > li {
+      align-items: center;
+      overflow: hidden;
+      padding: 0 196px;
+      display: flex;
+      height: 100%;
+      width: 100vw;
+    }
+  }
+}
+
+#home {
+  & > .container {
+    flex-direction: column;
+    display: flex;
+    color: red;
+    gap: 16px;
+    width: 75%;
+  }
 }
