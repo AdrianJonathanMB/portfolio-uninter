@@ -9,6 +9,10 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --primary: #17142f;
     --secondary: #ff2410;
@@ -70,6 +74,11 @@ button {
     width: 150px;
 }
 
+button:hover {
+    transition: all ease-in-out 300ms;
+    opacity: .7;
+}
+
 nav {
     align-items: center;
     position: fixed;
@@ -96,10 +105,10 @@ nav {
             height: 50px;
             width: 50px;
 
-
             &>img {
                 height: 24px;
             }
+
         }
 
         &>li:hover {
