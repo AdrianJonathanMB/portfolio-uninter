@@ -22,7 +22,6 @@ navigators.forEach((item, index) => {
 experience.forEach((item, index) => {
     item.addEventListener("click", () => {
         experienceState = index;
-        alert(experienceState)
         if (experienceTitle[index] === experienceState) {
             experienceTitle[index].classList.add("red")
         } else {
