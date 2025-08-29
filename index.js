@@ -16,21 +16,23 @@ const experienceText = [
 navigators.forEach((item, index) => {
     item.addEventListener("click", () => {
         document.documentElement.scrollLeft = index * width
+
+        navigators[index].classList.add("selected-navigator")
+        for (i in navigators) {
+            if (i != index) navigators[i].classList.remove("selected-navigator")
+        }
     })
 })
+
 
 experience.forEach((item, index) => {
     item.addEventListener("click", () => {
         experienceState = index;
-        alert(experienceState)
-        if (experienceTitle[index] === experienceState) {
-            experienceTitle[index].classList.add("red")
-        } else {
-            experienceTitle[index].classList.remove("red")
+
+        experienceTitle[index].classList.add("selected-experience")
+        for (i in experienceTitle) {
+            if (i != index) experienceTitle[i].classList.remove("selected-experience")
+            experienceContent.innerHTML = experienceText[index]
         }
-
-
-
-        experienceContent.innerHTML = experienceText[index]
     })
 })

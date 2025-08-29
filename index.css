@@ -8,7 +8,16 @@
   padding: 0;
   margin: 0;
 }
+.selected-experience {
+  color: var(--secondary);
+  border-color: #E1A4CB;
+}
 
+.selected-navigator {
+  color: var(--secondary);
+  border-color: #E1A4CB;
+  opacity: .2;
+}
 *::-webkit-scrollbar {
   display: none;
 }
@@ -18,9 +27,9 @@ html {
 }
 
 :root {
-  --primary: #17142f;
-  --secondary: #ff2410;
-  --tertiary: #ffffff;
+  --primary: #131119;
+  --secondary: #E1A4CB;
+  --tertiary: #FFFFFF;
 }
 
 body {
