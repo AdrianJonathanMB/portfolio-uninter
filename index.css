@@ -297,7 +297,7 @@ main {
 }
 
 #work {
-  display: none;
+  display: flex;
   gap: 16px;
 
   & > .work-container {
@@ -309,7 +309,7 @@ main {
   }
 
   & > .work-slider {
-    height: 50%;
+    height: 60%;
     width: auto;
 
     & > .slider-container {
@@ -358,7 +358,7 @@ main {
 
 #contact {
   justify-content: center;
-  display: none;
+  display: flex;
 
   & > .form-container {
     justify-content: center;
@@ -382,16 +382,15 @@ main {
 }
 @media (max-width: 768px) {
   nav {
+    position: fixed;
     height: 75px;
     width: 100vw;
     bottom: 0;
-    position: fixed;
     left: 0;
 
     & > ul {
       flex-direction: row;
       border-radius: 0;
-
       height: 100%;
       bottom: 0;
     }
@@ -418,12 +417,11 @@ main {
     }
   }
   #about {
-
     flex-direction: column;
     & > .container {
       flex-direction: column;
     }
-    
+
     & > .experience-container {
       flex-direction: row;
     }
