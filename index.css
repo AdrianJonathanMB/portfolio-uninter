@@ -15,29 +15,31 @@
 
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
+  max-height: 100vh;
 }
 
 :root {
-  --primary: #17142f;
-  --secondary: #ff2410;
-  --tertiary: #ffffff;
+  --primary: #0c0809;
+  --secondary: #ba346a;
+  --tertiary: #e8e7ec;
 }
 
 body {
   background-color: var(--primary);
   flex-direction: column;
-  overflow-y: hidden;
+  overflow: hidden;
   display: flex;
   height: 100vh;
   width: 400vw;
 }
 
 h1,
-h1>span {
+h1 > span {
   font-size: 3.5rem;
 }
 
-h1>span {
+h1 > span {
   color: var(--secondary);
 }
 
@@ -52,9 +54,9 @@ input,
 textarea {
   background-color: transparent;
   border: 1px solid var(--tertiary);
-  outline: none;
   border-radius: 10px;
   padding: 16px 16px;
+  outline: none;
   width: 100%;
 }
 
@@ -74,19 +76,25 @@ button {
   font-size: 1.25rem;
   font-weight: bold;
   padding: 16px 0;
+  cursor: pointer;
   outline: none;
   width: 150px;
 }
 
+button:hover {
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+}
 nav {
   align-items: center;
   position: fixed;
+
   display: flex;
   height: 100vh;
   width: 75px;
   right: 32px;
 
-  &>ul {
+  & > ul {
     background-color: rgb(255, 255, 255, 0.1);
     justify-content: space-evenly;
     backdrop-filter: blur(10px);
@@ -98,21 +106,21 @@ nav {
     width: 100%;
     height: 60%;
 
-    &>li {
+    & > li {
       place-items: center;
       display: grid;
       height: 50px;
       width: 50px;
 
-      &>img {
+      & > img {
         height: 24px;
       }
     }
 
-    &>li:hover {
+    & > li:hover {
       cursor: pointer;
 
-      &>img {
+      & > img {
         opacity: 0.5;
         transition: all ease-in-out 300ms;
       }
@@ -123,27 +131,27 @@ nav {
 header {
   justify-content: space-between;
   align-items: center;
-  padding: 16px 196px;
+  padding: 16px 124px;
   position: fixed;
   display: flex;
   width: 100vw;
 
-  &>address {
+  & > address {
     display: flex;
     gap: 16px;
 
-    &>a {
+    & > a {
       transition: all ease-in-out 300ms;
       cursor: pointer;
 
-      &>img {
+      & > img {
         height: 24px;
         width: 24px;
       }
     }
 
-    &>a:hover {
-      opacity: .5;
+    & > a:hover {
+      opacity: 0.5;
     }
   }
 }
@@ -151,15 +159,17 @@ header {
 main {
   overflow-x: scroll;
   flex-grow: 1;
+  overflow-y: hidden;
 
-  &>ul {
+  & > ul {
     display: flex;
     height: 100%;
+    overflow-y: hidden;
 
-    &>li {
+    & > li {
       align-items: center;
       overflow: hidden;
-      padding: 0 196px;
+      padding: 0 124px;
       display: flex;
       height: 100%;
       width: 100vw;
@@ -170,18 +180,18 @@ main {
 #home {
   display: flex;
 
-  &>.container {
+  & > .container {
     flex-direction: column;
     display: flex;
-    color: red;
+    color: var(--tertiary);
     width: 50%;
     gap: 16px;
   }
 
-  &>article {
+  & > article {
     background-color: var(--secondary);
 
-    &>.planet {
+    & > .planet {
       mix-blend-mode: difference;
       transform: translateX(25%);
       position: absolute;
@@ -194,31 +204,27 @@ main {
   }
 }
 
-.red {
-  color: red;
-}
-
 #about {
   justify-content: center;
   align-items: center;
   display: flex;
   gap: 48px;
 
-  &>.container {
+  & > .container {
     flex-direction: column;
     display: flex;
     height: 50%;
     width: 75%;
     gap: 32px;
 
-    &>.history-container {
+    & > .history-container {
       justify-content: space-between;
       list-style: none;
       display: flex;
       width: 50%;
 
-      &>.history-item {
-        border: 1px solid var(--tertiary);
+      & > .history-item {
+        border: 1px solid rgba(255, 255, 255, 0.5);
 
         flex-direction: column;
         border-bottom: none;
@@ -227,69 +233,74 @@ main {
         display: flex;
         gap: 8px;
 
-        &>.history-title {
+        & > .history-title {
           text-transform: uppercase;
           color: var(--secondary);
-          font-size: 1.5rem;
+          font-size: 4rem;
         }
 
-        &>.history-text {
+        & > .history-text {
           text-transform: uppercase;
           font-weight: bold;
-          font-size: 1rem;
           line-height: 16px;
+          font-size: 1rem;
         }
       }
 
-      &>.history-item:first-child {
+      & > .history-item:first-child {
         padding-left: 0;
         border-left: none;
       }
 
-      &>.history-item:last-child {
+      & > .history-item:last-child {
         padding-right: 0;
         border-right: none;
       }
     }
   }
 
-  &>.experience-container {
+  & > .experience-container {
     flex-direction: column;
     display: flex;
     height: 50%;
     width: 50%;
-    gap: 32px;
+    gap: 16px;
 
-    &>.experience-box {
+    & > .experience-box {
       justify-content: space-between;
       list-style: none;
       display: flex;
       width: 75%;
       gap: 16px;
 
-      &>.experience-item {
-        &>.experience-title {
-          &>h2 {
-            border-bottom: 1px solid rgba(255, 255, 255, .5);
+      & > .experience-item {
+        & > .experience-title {
+          & > h2 {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
             font-size: 1.5rem;
             font-weight: 600;
             cursor: pointer;
             padding: 8px 0;
           }
+
+          & > h2:hover {
+            opacity: 0.5;
+          }
         }
       }
     }
 
-    &>article {
-      width: 75%;
+    & > article {
+      width: 100%;
     }
   }
 }
 
 #work {
-  display: flex;
+  display: none;
+  gap: 16px;
 
-  &>.work-container {
+  & > .work-container {
     flex-direction: column;
     display: flex;
     height: 50%;
@@ -297,21 +308,49 @@ main {
     gap: 16px;
   }
 
-  &>.work-slider {
-    height: 75%;
+  & > .work-slider {
+    height: 50%;
     width: auto;
 
-    &>.slider-container {
+    & > .slider-container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
       aspect-ratio: 16/9;
       list-style: none;
       flex-wrap: wrap;
-      display: flex;
+      display: grid;
       height: 75%;
+      gap: 12px;
 
-      &>.slider-item {
-        border: 1px solid red;
-        aspect-ratio: 16/9;
-        width: 50%;
+      & > .slider-item {
+        border: 1px solid var(--tertiary);
+        border-radius: 10px;
+        position: relative;
+        width: 100%;
+      }
+
+      & > .slider-item::after {
+        content: "visualizar projeto";
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        display: none;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        background-image: linear-gradient(
+          to right,
+          transparent 0%,
+          rgb(186, 52, 106, 0.75) 50%,
+          transparent 100%
+        );
+        left: 0;
+        top: 0;
+      }
+      & > .slider-item:hover::after {
+        display: flex;
       }
     }
   }
@@ -319,9 +358,9 @@ main {
 
 #contact {
   justify-content: center;
-  display: flex;
+  display: none;
 
-  &>.form-container {
+  & > .form-container {
     justify-content: center;
     flex-direction: column;
     display: flex;
@@ -329,15 +368,64 @@ main {
     width: 75%;
     gap: 16px;
 
-    &>.form-title {
+    & > .form-title {
       text-align: center;
       width: 100%;
     }
 
-    &>.form-box {
+    & > .form-box {
       display: flex;
       width: 100%;
       gap: 16px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  nav {
+    height: 75px;
+    width: 100vw;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+
+    & > ul {
+      flex-direction: row;
+      border-radius: 0;
+
+      height: 100%;
+      bottom: 0;
+    }
+  }
+
+  header {
+    padding: 16px 32px;
+  }
+
+  main {
+    & > ul {
+      & > li {
+        padding: 0 32px;
+      }
+    }
+  }
+
+  #home {
+    & > .container {
+      display: flex;
+      color: var(--tertiary);
+      width: 100%;
+      gap: 16px;
+    }
+  }
+  #about {
+
+    flex-direction: column;
+    & > .container {
+      flex-direction: column;
+    }
+    
+    & > .experience-container {
+      flex-direction: row;
     }
   }
 }
